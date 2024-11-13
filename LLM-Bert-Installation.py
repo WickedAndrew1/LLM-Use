@@ -25,4 +25,6 @@ predictions = ["hello there, it is I", "general kenobi is here"]
 references = ["hello there, this is charles xavier", "kenobi is dead"]
 results = bertscore.compute(predictions=predictions, references=references, lang="en")
 print(results)
-#Key notes-this is without pipelines, transformers, and specific bert variables. This is simply done to ensure Bert-scoring works.
+#Key notes-this is without pipelines, transformers, and specific bert variables. This is simply done to ensure Bert-scoring works. In results, specifying model will also determine differences in
+#output for precision, recall, F1, and hashcode.
+#This code is mostly not mine. This was taken from https://huggingface.co/spaces/evaluate-metric/bertscore 
