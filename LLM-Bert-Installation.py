@@ -8,7 +8,7 @@
 #"pip install evaluate" was used to install evaluate metrics found on hugging face.
 #"pip install transformers": this needed both rust and cargo packages on PATH. Download from here https://rustup.rs/ 
 #If running into rustup installation issues, try to ensure it's fully downloaded, then run "rustup default stable". That should fix most issues.
-#"pip install torch" to install pytorch.
+#"pip install torch" to install pytorch. Key note-pytorch was installed without CUDA and with pip package due to current OS. On hopper cluster, most likely can be downloaded with CUDA.
 #"pip install bert_score" for use of BERT scoring metric. It'll store a BERT-scorer that works with your machine and script packages.
 #Note, testing bert_scoring still requires significant memory. 
 #Errors/warnings do occur asking about caching with symlinks enabled or not. Running python as an administrator should fix this.
