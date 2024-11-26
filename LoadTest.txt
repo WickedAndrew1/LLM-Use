@@ -1,0 +1,16 @@
+from llama_cpp import Llama
+
+# Specify the path 
+model_path = "path/to/llama-3.2-1b-instruct-q8_0.gguf"
+
+# Load the model
+llm = Llama(model_path=model_path)
+
+# Input prompt
+input_text = "Explain the concept of quantum entanglement."
+
+# Generate a response
+output = llm(input_text, max_tokens=100)  # Set max_tokens based on your needs
+
+# Print the response
+print(output['choices'][0]['text'])
