@@ -1,16 +1,19 @@
-from llama_cpp import Llama
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from sentence_transformers import SentenceTransformer
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+import faiss
+import numpy as np
 
-# Specify the path 
-model_path = "path/to/llama-3.2-1b-instruct-q8_0.gguf"
+# Load data 
+loader = PyPDFLoader("A pdf file.pdf")  # Replace with your data source
+documents = loader.load()
 
-# Load the model
-llm = Llama(model_path=model_path)
+# Split into chunks
+splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+chunks = splitter.split_documents(documents)
 
-# Input prompt
-input_text = "Explain the concept of quantum entanglement."
-
-# Generate a response
-output = llm(input_text, max_tokens=100)  # Set max_tokens based on your needs
-
-# Print the response
-print(output['choices'][0]['text'])
+model_name = "meta-llama/llama-3-70b-instruct-awq"  # Adjust if using a local version or different repository
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", torch_dtype="auto")
+llama_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer)
