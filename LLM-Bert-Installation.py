@@ -1,4 +1,4 @@
-#When installing python, select it to be on the PATH. It also must be version 3.9-version 3.12. Current Python version is 3.12.6.
+#When installing python, select it to be on the PATH. It also must be version 3.9-version 3.12. Current Python version is 3.12.6. Use of Conda to create virtual environment is recommmended.
 #I ran into compability issues with running torch to install pytorch. It's only supported on those versions.
 #Downloading python as 64-bit should also prevent any issues as well. After attempting to download bert_score,
 #I noticed that pip, torch, and bert_score would never properly download. This is probably due to a lack of support
