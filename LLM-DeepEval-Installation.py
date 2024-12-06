@@ -1,6 +1,6 @@
 #Due to overlap of installations, refer to the LLM-Bert.py documentation first.
 #Run command "pip install -U deepeval" 
-#No need to login for deepeval. All evaluations will be done locally.
+#No need to login for deepeval. All evaluations will be done locally; may be done online as well, to monitor some data due to hopper cluster being used.
 # On your command terminal, run this program.
 #Steps were taken from: https://docs.confident-ai.com/docs/getting-started and https://docs.confident-ai.com/docs/integrations-huggingface
 import os
