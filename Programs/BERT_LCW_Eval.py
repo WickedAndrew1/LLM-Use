@@ -4,7 +4,7 @@ from evaluate import load
 bertscore = load("bertscore")
 from datasets import load_dataset
 from huggingface_hub import login
-login(token="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") #Read Token.
+login(token="") #Read Token.
 dataset=load_dataset('adiaz21/LCW-Summary-3',split='train')
 candidatetext=[]
 referencetext=[]
