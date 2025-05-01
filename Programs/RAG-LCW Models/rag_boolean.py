@@ -12,7 +12,7 @@ from datasets import load_dataset
 import time
 
 # Authentication with Hugging Face
-adnan_token = "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"
+adnan_token = ""
 login(token=adnan_token)
 
 # Initialize Llama 3.1 model
