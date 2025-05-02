@@ -6,7 +6,7 @@ from huggingface_hub import login
 from datasets import load_dataset
 
 # Authentication with Hugging Face
-adnan_token = "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"
+adnan_token = ""
 login(token=adnan_token)
 
 # Initialize Llama 3.1 model
